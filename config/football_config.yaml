@@ -1,0 +1,67 @@
+pitch:
+  length_m: 105.0
+  width_m: 68.0
+  goal_width_m: 7.32
+  penalty_box_length_m: 16.5
+  penalty_box_width_m: 40.32
+  center_circle_radius_m: 9.15
+
+calibration:
+  pixel_corners_fallback:        # used only if auto-detection fails / first run
+    - [120, 90]
+    - [1160, 90]
+    - [1260, 690]
+    - [30, 690]
+  recalibration_interval_frames: 150
+  min_calibration_confidence: 0.75    # 0-1, reprojection-error-derived
+  pitch_hue_range: [35, 85]           # HSV green mask band for line detection
+  pitch_min_saturation: 40
+
+detection:
+  det_conf_person: 0.35
+  det_conf_ball: 0.35     # matches current single DET_CONF baseline; separate ball tuning is a Phase 1 refinement
+  input_size: 640
+
+team_classification:
+  calibration_frames: 50
+  min_calib_samples: 25
+  referee_max_mean_sat: 55
+  referee_min_contrast: 42
+  min_sat_for_cluster: 60
+  vote_buffer_len: 8
+  vote_lock_thresh: 5
+
+ball:
+  gap_predict_frames: 6
+  max_realistic_speed_kmh: 38.0
+
+sprint:
+  sprint_kmh: 20.0
+  sprint_min_frames: 5
+
+possession:
+  radius_m: 2.2
+  pass_min_distance_m: 5.0
+
+shots:
+  velocity_threshold_ms: 15.0
+  angle_tolerance_deg: 25.0
+  max_distance_m: 35.0
+
+ocr:
+  enabled: true
+  interval_frames: 10
+  min_votes: 3
+
+formation:
+  enabled: true
+  update_interval_frames: 90
+
+goal_detection:
+  cooldown_frames: 90
+
+colors:
+  team_a: [230, 230, 230]
+  team_b: [40, 90, 235]
+  ball: [0, 215, 255]
+  goal_flash: [0, 255, 90]

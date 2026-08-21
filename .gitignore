@@ -1,0 +1,46 @@
+# Python Cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Documentation Files
+01_prd.md
+02_techspec.md
+03_appflow.md
+04_design.md
+05_schema.md
+06_implementation_plan.md
+07_tracker.md
+08_rules.md
+
+# Unused/Ignored Modules
+basketball/
+hockey/
+volleyball/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Generated outputs (regenerate via running the scripts)
+*_output.mp4
+*_dashboard.png
+*_heatmap.png
+*_pitch_map.png
+*_pitch_preview.png
+*_wagon_wheel.png
+*_deliveries.csv
+*_events.json
+yolov8n.pt
+
+# Local tool settings
+.claude/settings.local.json
+
+# Test artifacts
+.pytest_cache/
+
+# Unused/Ignored Modules
+basketball/
+hockey/
+volleyball/

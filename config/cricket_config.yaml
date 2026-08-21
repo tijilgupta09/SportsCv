@@ -1,0 +1,50 @@
+pitch:
+  length_m: 20.12
+  stump_width_m: 0.2286
+  popping_crease_offset_m: 1.22
+
+calibration:
+  camera_angle: "bowlers_end"
+  stump_pixel_points_far:
+    - [600, 140]
+    - [640, 140]
+  stump_pixel_points_near:
+    - [580, 700]
+    - [660, 700]
+  auto_detect_attempt: true
+
+detection:
+  det_conf_person: 0.40
+  det_conf_ball: 0.20
+  ball_input_size: 640
+
+kalman:
+  process_noise: 0.03
+  measurement_noise: 0.5
+  max_predict_gap_frames: 8
+
+delivery:
+  release_zone_pixel_radius: 80
+  release_velocity_threshold_ms: 8.0
+  delivery_timeout_frames: 90
+  bounce_zone_y_fraction: [0.35, 0.95]
+  # Ball entering the top 30% of frame (batsman zone) also triggers COMPLETE
+  # (TECHSPEC.md 6.5) — reduces reliance on timeout and fixes speed=0 bug.
+  batsman_zone_y_fraction: 0.30
+
+speed_gun:
+  display_duration_frames: 90
+
+wagon_wheel:
+  enabled: false
+  contact_velocity_delta_threshold: 20.0
+
+scoreboard_ocr:
+  enabled: false
+  roi_pixels: [20, 20, 300, 90]
+  read_interval_frames: 60
+
+colors:
+  ball_trail: [0, 210, 255]
+  bounce_flash: [0, 60, 255]
+  speed_gun_text: [255, 200, 0]
